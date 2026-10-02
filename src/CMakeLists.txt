@@ -8,7 +8,6 @@ target_sources( ${PROJECT_NAME}
 		${CMAKE_CURRENT_LIST_DIR}/ChamferDistanceTransform.cpp
 		${CMAKE_CURRENT_LIST_DIR}/Chi2Helper.h
 		${CMAKE_CURRENT_LIST_DIR}/CloudSamplingTools.cpp
-		${CMAKE_CURRENT_LIST_DIR}/CutPursuit.cpp
 		${CMAKE_CURRENT_LIST_DIR}/Delaunay2dMesh.cpp
 		${CMAKE_CURRENT_LIST_DIR}/DgmOctree.cpp
 		${CMAKE_CURRENT_LIST_DIR}/DgmOctreeReferenceCloud.cpp
@@ -17,13 +16,11 @@ target_sources( ${PROJECT_NAME}
 		${CMAKE_CURRENT_LIST_DIR}/FastMarching.cpp
 		${CMAKE_CURRENT_LIST_DIR}/FastMarchingForPropagation.cpp
 		${CMAKE_CURRENT_LIST_DIR}/GeometricalAnalysisTools.cpp
-		${CMAKE_CURRENT_LIST_DIR}/Graph.cpp
 		${CMAKE_CURRENT_LIST_DIR}/GridAndMeshIntersection.cpp
 		${CMAKE_CURRENT_LIST_DIR}/KdTree.cpp
 		${CMAKE_CURRENT_LIST_DIR}/Kriging.cpp
 		${CMAKE_CURRENT_LIST_DIR}/LocalModel.cpp
 		${CMAKE_CURRENT_LIST_DIR}/ManualSegmentationTools.cpp
-		${CMAKE_CURRENT_LIST_DIR}/Maxflow.cpp
 		${CMAKE_CURRENT_LIST_DIR}/MeshSamplingTools.cpp
 		${CMAKE_CURRENT_LIST_DIR}/Neighbourhood.cpp
 		${CMAKE_CURRENT_LIST_DIR}/NormalDistribution.cpp
