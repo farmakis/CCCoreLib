@@ -220,14 +220,10 @@ bool Neighbourhood::computeLeastSquareBestFittingPlane()
 	CCVector3 G(0, 0, 0);
 	if (pointCount > 3)
 	{
-		SquareMatrixd covMat = computeCovarianceMatrix();
-
-		//we determine the plane normal by computing the smallest eigen value of M = 1/n * S[(p-µ)*(p-µ)']
-		SquareMatrixd eigVectors;
-		std::vector<double> eigValues;
-		if (!Jacobi<double>::ComputeEigenValuesAndVectors(covMat, eigVectors, eigValues, true))
+		const PCAResults* pca = getPCA();
+		if (!pca)
 		{
-			//failed to compute the eigen values!
+			//failed to compute PCA
 			return false;
 		}
 
@@ -236,7 +232,7 @@ bool Neighbourhood::computeLeastSquareBestFittingPlane()
 			CCVector3d vec(0, 0, 1);
 			double minEigValue = 0;
 			//the smallest eigen vector corresponds to the "least square best fitting plane" normal
-			Jacobi<double>::GetMinEigenValueAndVector(eigVectors, eigValues, minEigValue, vec.u);
+			Jacobi<double>::GetMinEigenValueAndVector(pca->eigVectors, pca->eigValues, minEigValue, vec.u);
 			m_lsPlaneVectors[2] = vec.toPC();
 		}
 
@@ -244,7 +240,7 @@ bool Neighbourhood::computeLeastSquareBestFittingPlane()
 		{
 			CCVector3d vec;
 			double maxEigValue = 0;
-			Jacobi<double>::GetMaxEigenValueAndVector(eigVectors, eigValues, maxEigValue, vec.u);
+			Jacobi<double>::GetMaxEigenValueAndVector(pca->eigVectors, pca->eigValues, maxEigValue, vec.u);
 			m_lsPlaneVectors[0] = vec.toPC();
 		}
 

@@ -217,6 +217,10 @@ GeometricalAnalysisTools::ErrorCode GeometricalAnalysisTools::ComputeCharacteris
 				if (numberOfPoints < 4)
 					return NotEnoughPoints;
 				break;
+			case Normal:
+				if (numberOfPoints < 4)
+					return NotEnoughPoints;
+				break;
 			default:
 				assert(false);
 				return UnhandledCharacteristic;
@@ -393,6 +397,27 @@ bool GeometricalAnalysisTools::ComputeGeomCharacteristicsAtLevel(	const DgmOctre
 					value = Z.computeMomentOrder1(nNSS.queryPoint);
 				}
 					break;
+
+				case Normal:
+				{
+					const CCVector3* N = Z.getLSPlaneNormal();
+					if (N)
+					{
+						if (r.subOption == 0)
+						{
+							value = N->x;
+						}
+						else if (r.subOption == 1)
+						{
+							value = N->y;
+						}
+						else if (r.subOption == 2)
+						{
+							value = N->z;
+						}
+					}
+				}
+				break;
 
 				default:
 					assert(false);

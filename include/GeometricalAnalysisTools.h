@@ -26,7 +26,8 @@ namespace CCCoreLib
 									LocalDensity,		/**< Accurate local density (see GeometricalAnalysisTools::Density) **/
 									ApproxLocalDensity,	/**< Approximate local density (see GeometricalAnalysisTools::Density) **/
 									Roughness,			/**< Roughness **/
-									MomentOrder1		/**< 1st order moment **/
+									MomentOrder1,		/**< 1st order moment **/
+									Normal				/**< Normal vector **/
 								};
 
 		//! Density measurement
