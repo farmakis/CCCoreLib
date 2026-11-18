@@ -403,15 +403,15 @@ bool GeometricalAnalysisTools::ComputeGeomCharacteristicsAtLevel(	const DgmOctre
 					const CCVector3* N = Z.getLSPlaneNormal();
 					if (N)
 					{
-						if (r.subOption == 0)
+						if (r.subOption == 1)
 						{
 							value = N->x;
 						}
-						else if (r.subOption == 1)
+						else if (r.subOption == 2)
 						{
 							value = N->y;
 						}
-						else if (r.subOption == 2)
+						else if (r.subOption == 3)
 						{
 							value = N->z;
 						}
