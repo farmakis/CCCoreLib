@@ -186,6 +186,13 @@ namespace CCCoreLib
 			DegreeOfLinearity
 		};
 
+		enum NormalComponent
+		{
+			NormalX = 1,
+			NormalY,
+			NormalZ
+		};
+
 		//! PCA results (eigen vectors and sorted eigen values)
 		struct PCAResults
 		{
